@@ -1,0 +1,76 @@
+{
+  "format": "koinos-conformance/1",
+  "id": "valid-genesis",
+  "description": "Valid genesis prefix; unpinned incomplete histories are permitted.",
+  "bundle": {
+    "format": "koinos-bundle/0.1",
+    "records": [
+      {
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "body": {
+          "description": "Fictional Exofab-style proposal for a portable seed catalogue; no live integration.",
+          "participants": [
+            {
+              "id": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+              "kind": "human",
+              "name": "Mira"
+            },
+            {
+              "id": "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY",
+              "kind": "human",
+              "name": "Jon"
+            },
+            {
+              "id": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+              "kind": "agent",
+              "name": "Seed builder"
+            }
+          ],
+          "title": "Community seed catalogue"
+        },
+        "id": "5193579a85874a7a2af758c56e3b2bdc0a49c7ec20e19f45cd228157cb07c61d",
+        "kind": "project.created",
+        "previous": null,
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 0,
+        "signature": "4MALxOh8w9rD1aaV_L9bEratg1vBj93Z4kEGqBpj-0uN_ELaPHEWF-IsJKObkJ3_WdnOTVyuAxlnvdIEXolzDA",
+        "time": "2026-01-01T12:00:00.000Z"
+      }
+    ]
+  },
+  "options": {},
+  "expected": {
+    "outcome": "accept",
+    "state": {
+      "project": {
+        "id": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "title": "Community seed catalogue",
+        "description": "Fictional Exofab-style proposal for a portable seed catalogue; no live integration.",
+        "steward": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ"
+      },
+      "participants": [
+        {
+          "id": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+          "kind": "human",
+          "name": "Mira"
+        },
+        {
+          "id": "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY",
+          "kind": "human",
+          "name": "Jon"
+        },
+        {
+          "id": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+          "kind": "agent",
+          "name": "Seed builder"
+        }
+      ],
+      "agreements": [],
+      "delegations": [],
+      "contributions": [],
+      "head": "5193579a85874a7a2af758c56e3b2bdc0a49c7ec20e19f45cd228157cb07c61d",
+      "count": 1
+    }
+  }
+}

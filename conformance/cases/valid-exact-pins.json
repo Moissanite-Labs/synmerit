@@ -1,0 +1,254 @@
+{
+  "format": "koinos-conformance/1",
+  "id": "valid-exact-pins",
+  "description": "Both trusted pins match exactly.",
+  "bundle": {
+    "format": "koinos-bundle/0.1",
+    "records": [
+      {
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "body": {
+          "description": "Fictional Exofab-style proposal for a portable seed catalogue; no live integration.",
+          "participants": [
+            {
+              "id": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+              "kind": "human",
+              "name": "Mira"
+            },
+            {
+              "id": "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY",
+              "kind": "human",
+              "name": "Jon"
+            },
+            {
+              "id": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+              "kind": "agent",
+              "name": "Seed builder"
+            }
+          ],
+          "title": "Community seed catalogue"
+        },
+        "id": "5193579a85874a7a2af758c56e3b2bdc0a49c7ec20e19f45cd228157cb07c61d",
+        "kind": "project.created",
+        "previous": null,
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 0,
+        "signature": "4MALxOh8w9rD1aaV_L9bEratg1vBj93Z4kEGqBpj-0uN_ELaPHEWF-IsJKObkJ3_WdnOTVyuAxlnvdIEXolzDA",
+        "time": "2026-01-01T12:00:00.000Z"
+      },
+      {
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "body": {
+          "digest": "beb5f152231ff488645b90f22909e451fc000b98effe25d3350db61b50a969eb",
+          "parties": [
+            "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+            "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY"
+          ],
+          "title": "Sandbox collaboration terms",
+          "uri": "https://example.invalid/seed-catalogue/terms.txt"
+        },
+        "id": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f",
+        "kind": "agreement.proposed",
+        "previous": "5193579a85874a7a2af758c56e3b2bdc0a49c7ec20e19f45cd228157cb07c61d",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 1,
+        "signature": "Kxs1pJj8QyK5M-xWFv4Qubs_yEsSN-2ORGpbbNJVSHVyY5TobYLoBsalu7dYPc9yZIpdwYsrv0xMUTToYQehBg",
+        "time": "2026-01-01T12:00:01.000Z"
+      },
+      {
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "body": {
+          "agreement": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f"
+        },
+        "id": "dceb4614844b6273e295b9c2f00710cf8aba6dad38cbe6c250dbe60fe409c49c",
+        "kind": "agreement.consented",
+        "previous": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 2,
+        "signature": "_tUlDkWOkeEB7vrDC__v_j8XAt6L8dnAYXkeGG_s8yFtZLP7O_h4lPhN7XcpOLOGCV_vjwjbUMOSV0pqEsspCA",
+        "time": "2026-01-01T12:00:02.000Z"
+      },
+      {
+        "actor": "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY",
+        "body": {
+          "agreement": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f"
+        },
+        "id": "b4e7fd6c63735658c00fd0fbd9c5480c886825b2817a2c6bf3ce6c81d1db632e",
+        "kind": "agreement.consented",
+        "previous": "dceb4614844b6273e295b9c2f00710cf8aba6dad38cbe6c250dbe60fe409c49c",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 3,
+        "signature": "zGrtwIBVl-oxm3JvjXej_Vi6nFrkl2R3bBTr6A3od9EiN-ILYj19G_ic-oc8ENCPXLoNQ626_VV_VBsd8JEsAg",
+        "time": "2026-01-01T12:00:03.000Z"
+      },
+      {
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "body": {
+          "agent": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+          "agreement": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f",
+          "expires": "2027-01-01T00:00:00.000Z",
+          "scope": [
+            "contribution.submit"
+          ]
+        },
+        "id": "826092b63c2dda5cc6579e6540c8d7b51606acc65d28ffd9a411710478c61232",
+        "kind": "delegation.granted",
+        "previous": "b4e7fd6c63735658c00fd0fbd9c5480c886825b2817a2c6bf3ce6c81d1db632e",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 4,
+        "signature": "1-9emkIhQQiy8DuhLqq676sRyh34OKFyyJzy0clOMG6QaLwgw5mKV-tJSFn8JqGR3Al3GJsY5iMBTw4-vBR7Dg",
+        "time": "2026-01-01T12:00:04.000Z"
+      },
+      {
+        "actor": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+        "body": {
+          "agreement": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f",
+          "artifact": {
+            "digest": "18e58a98733cd86872d83ff4281dca91c1263602dc72018a7c03c1f0c2e854ff",
+            "uri": "https://example.invalid/seed-catalogue/schema.json"
+          },
+          "delegation": "826092b63c2dda5cc6579e6540c8d7b51606acc65d28ffd9a411710478c61232",
+          "summary": "Fictional agent submission, independently reviewed before acceptance.",
+          "title": "Searchable seed catalogue schema"
+        },
+        "id": "e89e2791db98796538496ebe04af9ac06894c640234ba2ce59e7219cf9ec8d3d",
+        "kind": "contribution.submitted",
+        "previous": "826092b63c2dda5cc6579e6540c8d7b51606acc65d28ffd9a411710478c61232",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 5,
+        "signature": "sDbL5gv91EUzwOalt3NqzgvIapvKvEjV0hKsCfR8JmKxR2kJO4xxJx9t9Au8KhP4V9P0NlT-Vdt9I-88_W9ODw",
+        "time": "2026-01-01T12:00:05.000Z"
+      },
+      {
+        "actor": "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY",
+        "body": {
+          "contribution": "e89e2791db98796538496ebe04af9ac06894c640234ba2ce59e7219cf9ec8d3d",
+          "decision": "approve",
+          "note": "Sandbox review: supplied schema requires id, commonName, scientificName and origin with region/source, rejects unknown fields and permits harvestYear/notes. Conformance checks the supplied evidence bytes; no URI was fetched."
+        },
+        "id": "fda94b18239ee1ed1c5b2da1c19e2ac52e0972f944242c3bb4d7fbcc309fc5e5",
+        "kind": "contribution.reviewed",
+        "previous": "e89e2791db98796538496ebe04af9ac06894c640234ba2ce59e7219cf9ec8d3d",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 6,
+        "signature": "xefgEUiSODzUvO18m0FVC7chOuZrFpGxSlDwW9JJw-2I74RfOfoApMJH_tIe5pCEj9hjkxs0xBXVpyez6PGGCg",
+        "time": "2026-01-01T12:00:06.000Z"
+      },
+      {
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "body": {
+          "contribution": "e89e2791db98796538496ebe04af9ac06894c640234ba2ce59e7219cf9ec8d3d",
+          "review": "fda94b18239ee1ed1c5b2da1c19e2ac52e0972f944242c3bb4d7fbcc309fc5e5"
+        },
+        "id": "7ea3807c43ed31850ac654129ca1270b977dab70e511e4b28d4dc5a0b1c1f47c",
+        "kind": "contribution.accepted",
+        "previous": "fda94b18239ee1ed1c5b2da1c19e2ac52e0972f944242c3bb4d7fbcc309fc5e5",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 7,
+        "signature": "0AQLDp8pD2AdWuk_UPdes9rm1n9EJY1QdeOR7f0Lfg7NwAlhaxikhH98vR-0D6YdIGYzp8C8_XoW3EFE0KG2AQ",
+        "time": "2026-01-01T12:00:07.000Z"
+      }
+    ]
+  },
+  "options": {
+    "expectedHead": "7ea3807c43ed31850ac654129ca1270b977dab70e511e4b28d4dc5a0b1c1f47c",
+    "expectedProject": "7d2b815c-3a42-46a4-a767-449cc244afd8"
+  },
+  "expected": {
+    "outcome": "accept",
+    "state": {
+      "project": {
+        "id": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "title": "Community seed catalogue",
+        "description": "Fictional Exofab-style proposal for a portable seed catalogue; no live integration.",
+        "steward": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ"
+      },
+      "participants": [
+        {
+          "id": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+          "kind": "human",
+          "name": "Mira"
+        },
+        {
+          "id": "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY",
+          "kind": "human",
+          "name": "Jon"
+        },
+        {
+          "id": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+          "kind": "agent",
+          "name": "Seed builder"
+        }
+      ],
+      "agreements": [
+        {
+          "id": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f",
+          "digest": "beb5f152231ff488645b90f22909e451fc000b98effe25d3350db61b50a969eb",
+          "parties": [
+            "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+            "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY"
+          ],
+          "title": "Sandbox collaboration terms",
+          "uri": "https://example.invalid/seed-catalogue/terms.txt",
+          "consents": [
+            "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+            "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY"
+          ]
+        }
+      ],
+      "delegations": [
+        {
+          "id": "826092b63c2dda5cc6579e6540c8d7b51606acc65d28ffd9a411710478c61232",
+          "agent": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+          "agreement": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f",
+          "expires": "2027-01-01T00:00:00.000Z",
+          "scope": [
+            "contribution.submit"
+          ],
+          "principal": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+          "revoked": false
+        }
+      ],
+      "contributions": [
+        {
+          "id": "e89e2791db98796538496ebe04af9ac06894c640234ba2ce59e7219cf9ec8d3d",
+          "agreement": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f",
+          "artifact": {
+            "digest": "18e58a98733cd86872d83ff4281dca91c1263602dc72018a7c03c1f0c2e854ff",
+            "uri": "https://example.invalid/seed-catalogue/schema.json"
+          },
+          "delegation": "826092b63c2dda5cc6579e6540c8d7b51606acc65d28ffd9a411710478c61232",
+          "summary": "Fictional agent submission, independently reviewed before acceptance.",
+          "title": "Searchable seed catalogue schema",
+          "actor": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+          "principal": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+          "status": "accepted",
+          "reviews": [
+            {
+              "id": "fda94b18239ee1ed1c5b2da1c19e2ac52e0972f944242c3bb4d7fbcc309fc5e5",
+              "actor": "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY",
+              "decision": "approve",
+              "note": "Sandbox review: supplied schema requires id, commonName, scientificName and origin with region/source, rejects unknown fields and permits harvestYear/notes. Conformance checks the supplied evidence bytes; no URI was fetched."
+            }
+          ],
+          "acceptance": {
+            "id": "7ea3807c43ed31850ac654129ca1270b977dab70e511e4b28d4dc5a0b1c1f47c",
+            "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+            "review": "fda94b18239ee1ed1c5b2da1c19e2ac52e0972f944242c3bb4d7fbcc309fc5e5"
+          },
+          "dispute": null
+        }
+      ],
+      "head": "7ea3807c43ed31850ac654129ca1270b977dab70e511e4b28d4dc5a0b1c1f47c",
+      "count": 8
+    }
+  }
+}
