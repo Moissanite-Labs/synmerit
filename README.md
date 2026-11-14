@@ -2,6 +2,8 @@
 
 Koinos is a protocol for people and agents to cooperate across independent projects. It records who contributed, what evidence was reviewed, and which agreements and permissions applied. Projects can carry that history between tools without depending on one organization.
 
+This repository is `Moissanite-Labs/synmerit`, renamed from `koinos`; the old address redirects here. The organization profile lists the project as Synmerit. The protocol and its identifiers (`koinos/0.1`, `koinos-bundle/0.1`, `koinos:ed25519:` keys) keep the Koinos name, so records made with this version stay valid.
+
 **Version 0.1 is an experimental reference implementation.** It includes a signed record format, a local command-line tool, and a visual workbench. It does not operate an economic network or transfer money. The [founding vision](docs/vision.md) is preserved in full.
 
 ## Try it locally
@@ -9,8 +11,8 @@ Koinos is a protocol for people and agents to cooperate across independent proje
 Requires **Node.js 22 or newer**. No dependencies, account, API key, or package installation is required.
 
 ```sh
-git clone https://github.com/Moissanite-Labs/koinos.git
-cd koinos
+git clone https://github.com/Moissanite-Labs/synmerit.git
+cd synmerit
 npm start
 ```
 
