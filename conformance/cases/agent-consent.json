@@ -1,0 +1,80 @@
+{
+  "format": "koinos-conformance/1",
+  "id": "agent-consent",
+  "description": "An agent cannot consent as an agreement party.",
+  "bundle": {
+    "format": "koinos-bundle/0.1",
+    "records": [
+      {
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "body": {
+          "description": "Fictional Exofab-style proposal for a portable seed catalogue; no live integration.",
+          "participants": [
+            {
+              "id": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+              "kind": "human",
+              "name": "Mira"
+            },
+            {
+              "id": "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY",
+              "kind": "human",
+              "name": "Jon"
+            },
+            {
+              "id": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+              "kind": "agent",
+              "name": "Seed builder"
+            }
+          ],
+          "title": "Community seed catalogue"
+        },
+        "id": "5193579a85874a7a2af758c56e3b2bdc0a49c7ec20e19f45cd228157cb07c61d",
+        "kind": "project.created",
+        "previous": null,
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 0,
+        "signature": "4MALxOh8w9rD1aaV_L9bEratg1vBj93Z4kEGqBpj-0uN_ELaPHEWF-IsJKObkJ3_WdnOTVyuAxlnvdIEXolzDA",
+        "time": "2026-01-01T12:00:00.000Z"
+      },
+      {
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "body": {
+          "digest": "beb5f152231ff488645b90f22909e451fc000b98effe25d3350db61b50a969eb",
+          "parties": [
+            "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+            "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY"
+          ],
+          "title": "Sandbox collaboration terms",
+          "uri": "https://example.invalid/seed-catalogue/terms.txt"
+        },
+        "id": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f",
+        "kind": "agreement.proposed",
+        "previous": "5193579a85874a7a2af758c56e3b2bdc0a49c7ec20e19f45cd228157cb07c61d",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 1,
+        "signature": "Kxs1pJj8QyK5M-xWFv4Qubs_yEsSN-2ORGpbbNJVSHVyY5TobYLoBsalu7dYPc9yZIpdwYsrv0xMUTToYQehBg",
+        "time": "2026-01-01T12:00:01.000Z"
+      },
+      {
+        "protocol": "koinos/0.1",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "sequence": 2,
+        "previous": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f",
+        "time": "2026-01-01T12:01:00.000Z",
+        "actor": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+        "kind": "agreement.consented",
+        "body": {
+          "agreement": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f"
+        },
+        "id": "18095adf564f4b409c30340261b393f92d1f3a6cc421be5e35d60a384e84e6d4",
+        "signature": "vzX1hxpv7PYCW8x2saiqF93-4wM770seg8fY3t2VRIzqjNvljgOQrlTbxjT4g795amTcCvt-4SwYrJ3oR4IMBA"
+      }
+    ]
+  },
+  "options": {},
+  "expected": {
+    "outcome": "reject"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "format": "koinos-conformance/1",
+  "id": "forward-agreement",
+  "description": "Consent cannot reference an agreement absent from preceding history.",
+  "bundle": {
+    "format": "koinos-bundle/0.1",
+    "records": [
+      {
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "body": {
+          "description": "Fictional Exofab-style proposal for a portable seed catalogue; no live integration.",
+          "participants": [
+            {
+              "id": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+              "kind": "human",
+              "name": "Mira"
+            },
+            {
+              "id": "koinos:ed25519:4ktPf3roMrlJtabhjS4HUNJECd-3H_81IgXEXC9ytoY",
+              "kind": "human",
+              "name": "Jon"
+            },
+            {
+              "id": "koinos:ed25519:CcTgkP_y9h-jkQDt7nFJ8Gkn3PrB1jZ_e_39G30zKAE",
+              "kind": "agent",
+              "name": "Seed builder"
+            }
+          ],
+          "title": "Community seed catalogue"
+        },
+        "id": "5193579a85874a7a2af758c56e3b2bdc0a49c7ec20e19f45cd228157cb07c61d",
+        "kind": "project.created",
+        "previous": null,
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "protocol": "koinos/0.1",
+        "sequence": 0,
+        "signature": "4MALxOh8w9rD1aaV_L9bEratg1vBj93Z4kEGqBpj-0uN_ELaPHEWF-IsJKObkJ3_WdnOTVyuAxlnvdIEXolzDA",
+        "time": "2026-01-01T12:00:00.000Z"
+      },
+      {
+        "protocol": "koinos/0.1",
+        "project": "7d2b815c-3a42-46a4-a767-449cc244afd8",
+        "sequence": 1,
+        "previous": "5193579a85874a7a2af758c56e3b2bdc0a49c7ec20e19f45cd228157cb07c61d",
+        "time": "2026-01-01T12:01:00.000Z",
+        "actor": "koinos:ed25519:f4EhO2pGFm686GInLTVOESqI33UuxKxhYLsYCeBQOKQ",
+        "kind": "agreement.consented",
+        "body": {
+          "agreement": "f3841f50cc3283daae734fa918f14dce375e255ff8213cf72fba194f969eb46f"
+        },
+        "id": "f816d4554aca7b0ea8f34c37ae66e826debe8ebc0fb6fa0336a7226663364dd4",
+        "signature": "if-VGwlUAcU1Y_Lp212bIZHoTvtNUe3WdnPGodj6unDXa5T03-WJ89l-DcrnU9NN3FCMryjgUyvj3Sn_P5sJCg"
+      }
+    ]
+  },
+  "options": {},
+  "expected": {
+    "outcome": "reject"
+  }
+}
