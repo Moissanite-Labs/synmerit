@@ -98,10 +98,24 @@ function decode(s, length) {
   if (b.length !== length || enc(b) !== s) fail("Noncanonical base64url");
   return b;
 }
+// Ed25519 points of order 1, 2, 4 or 8 verify signatures made without a private
+// key. A point and its negation share y, so y (sign bit cleared, reduced mod p)
+// identifies all eight: 0, 1, p - 1 and the two order-8 values.
+const FIELD = 2n ** 255n - 19n;
+const ORDER8_Y =
+  2707385501144840649318225287225658788936804267575313519463743609750303402022n;
+const SMALL_ORDER_Y = new Set([0n, 1n, FIELD - 1n, ORDER8_Y, FIELD - ORDER8_Y]);
+function smallOrder(raw) {
+  let y = 0n;
+  for (let i = 31; i >= 0; i--)
+    y = (y << 8n) | BigInt(i === 31 ? raw[i] & 0x7f : raw[i]);
+  return SMALL_ORDER_Y.has(y % FIELD);
+}
 function publicKey(id) {
   if (typeof id !== "string" || !id.startsWith("koinos:ed25519:"))
     fail("Invalid actor identity");
   const raw = decode(id.slice(15), 32);
+  if (smallOrder(raw)) fail("Small-order actor key");
   return createPublicKey({
     key: Buffer.concat([Buffer.from("302a300506032b6570032100", "hex"), raw]),
     format: "der",

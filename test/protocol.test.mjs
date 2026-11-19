@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { randomUUID } from "node:crypto";
 import {
   generateIdentity,
   createRecord,
@@ -426,4 +427,79 @@ test("delegation cannot change principal, agent, agreement or introduce human de
       reason: "Too soon",
     }),
   );
+});
+test("small-order actor keys are rejected before signature verification", async () => {
+  const { verifyCryptography } = await import("../web/verify.mjs");
+  const p = 2n ** 255n - 19n,
+    order8 =
+      2707385501144840649318225287225658788936804267575313519463743609750303402022n;
+  const encodeY = (y, sign) => {
+    const b = Buffer.alloc(32);
+    for (let i = 0; i < 32; i++, y >>= 8n) b[i] = Number(y & 255n);
+    b[31] |= sign << 7;
+    return b;
+  };
+  // All eight torsion points, both sign bits, and noncanonical y = p, p + 1.
+  const weak = [0n, 1n, p - 1n, order8, p - order8, p, p + 1n].flatMap((y) =>
+    [0, 1].map((sign) => encodeY(y, sign)),
+  );
+  // 1, p - 1 and 0 are the y of the order 1, 2 and 4 points. Check the order-8
+  // constant algebraically: OpenSSL builds differ on accepting these forgeries.
+  const pow = (b, e) => {
+    let r = 1n;
+    for (b %= p; e; e >>= 1n, b = (b * b) % p) if (e & 1n) r = (r * b) % p;
+    return r;
+  };
+  const d = ((p - 121665n) * pow(121666n, p - 2n)) % p;
+  for (const y of [order8, p - order8]) {
+    const y2 = (y * y) % p;
+    assert.equal((d * y2 * y2 + 2n * y2 - 1n) % p, 0n, "double has y = 0");
+    const x2 = ((y2 - 1n) * pow(d * y2 + 1n, p - 2n)) % p;
+    assert.equal(pow(x2, (p - 1n) / 2n), 1n, "point is on the curve");
+  }
+  // R = identity, S = 0 verifies for a small-order key whenever [k]A is the identity.
+  const forged = Buffer.concat([encodeY(1n, 0), Buffer.alloc(32)]);
+  for (const raw of weak) {
+    const actor = "koinos:ed25519:" + raw.toString("base64url");
+    const unsigned = {
+      protocol: "koinos/0.1",
+      project: randomUUID(),
+      sequence: 0,
+      previous: null,
+      time,
+      actor,
+      kind: "project.created",
+      body: {
+        title: "Forged",
+        description: "No private key",
+        participants: [{ id: actor, name: "Anyone", kind: "human" }],
+      },
+    };
+    const id = digestBytes(canonicalize(unsigned));
+    const bundle = {
+      format: "koinos-bundle/0.1",
+      records: [{ ...unsigned, id, signature: forged.toString("base64url") }],
+    };
+    assert.throws(() => verifyBundle(bundle), /Small-order actor key/);
+    await assert.rejects(verifyCryptography(bundle), /Small-order public key/);
+    const alice = generateIdentity();
+    assert.throws(
+      () =>
+        createRecord({
+          records: [],
+          identity: alice,
+          kind: "project.created",
+          time,
+          body: {
+            title: "Project",
+            description: "Weak participant",
+            participants: [
+              { id: alice.id, name: "Alice", kind: "human" },
+              { id: actor, name: "Weak", kind: "agent" },
+            ],
+          },
+        }),
+      /Small-order actor key/,
+    );
+  }
 });

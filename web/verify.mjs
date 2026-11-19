@@ -46,6 +46,18 @@ function bytes(s) {
     throw Error("Noncanonical base64url");
   return b;
 }
+// Small-order Ed25519 points accept forged signatures. Each is identified by its
+// y-coordinate (little-endian, sign bit cleared, reduced mod p).
+const p = (1n << 255n) - 19n;
+const order8 =
+  2707385501144840649318225287225658788936804267575313519463743609750303402022n;
+const weakY = [0n, 1n, p - 1n, order8, p - order8];
+function weakKey(raw) {
+  const big = Array.from(raw).reverse();
+  big[0] &= 0x7f;
+  const hex = big.map((v) => v.toString(16).padStart(2, "0")).join("");
+  return weakY.includes(BigInt("0x" + hex) % p);
+}
 export async function verifyCryptography(bundle) {
   if (
     bundle?.format !== "koinos-bundle/0.1" ||
@@ -87,6 +99,7 @@ export async function verifyCryptography(bundle) {
     if (!r.actor.startsWith("koinos:ed25519:")) throw Error("Unknown key type");
     const raw = bytes(r.actor.slice(15));
     if (raw.length !== 32) throw Error("Invalid public key length");
+    if (weakKey(raw)) throw Error("Small-order public key");
     const key = await crypto.subtle.importKey(
       "raw",
       raw,
